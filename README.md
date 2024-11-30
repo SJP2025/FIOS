@@ -1,1 +1,1 @@
-FIOS = Financial Input Output System 
+$FIOS = @("Financial", "Input", "Output", "System") 
