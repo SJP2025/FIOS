@@ -1,4 +1,5 @@
- Function Reset-Router {
+#Region Clear Relative path file (.rtr)
+Function Reset-Router {
     $FolderPath = "$DrivePathMain\Process\Router"
 
     # Search for all .rtr files and delete them
@@ -7,3 +8,4 @@
         Write-Output "Deleted file: $($_.FullName)"
     }
  }
+ #EndRegion

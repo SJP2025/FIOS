@@ -1,3 +1,4 @@
+#Region Run Get-RelativePath Builder/Functions
 Function Assert-InitialProcess {
     param (
         [PSCustomObject]$FilePathArray
@@ -24,3 +25,4 @@ Function Assert-InitialProcess {
         }
     }
 }
+#EndRegion

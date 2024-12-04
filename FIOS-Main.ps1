@@ -1,3 +1,4 @@
+#Region FIOS Main
 $DrivePathMain = $PSScriptRoot
 Write-Output "Sourcing Drive Path: ${DrivePathMain}"
 
@@ -10,3 +11,5 @@ $ImportScriptLibrary = "${DrivePathMain}\Import-Lib.ps1"
 Reset-Router
 $ExecutePathArray = Initiate-Process
 Assert-InitialProcess -FilePathArray $ExecutePathArray
+
+#EndRegion

@@ -1,3 +1,4 @@
+#Region BootStrap Relative Path
 function Get-RelativePath {
     # Ensure the function gets the script's directory
     param (
@@ -8,7 +9,7 @@ function Get-RelativePath {
     $CurrentFolder = Split-Path -Path $path -Leaf
 
     # Construct the full file path
-    $filePath = "C:\Users\compu\Desktop\FIOS\Process\Router\$CurrentFolder`FolderPath.rtr"
+    $filePath = "$DrivePathMain\Process\Router\$CurrentFolder`FolderPath.rtr"
 
     # Ensure the folder exists before writing to the file
     $folderPath = Split-Path -Path $filePath
@@ -22,7 +23,7 @@ function Get-RelativePath {
     # Return the constructed file path for reference
     return $filePath
 }
-
+#EndRegion
 # Example usage
 #$generatedFilePath = Get-RelativePath
 #Write-Output "Path written to: $generatedFilePath"
