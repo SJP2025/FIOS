@@ -9,7 +9,7 @@ function Get-RelativePath {
     $CurrentFolder = Split-Path -Path $path -Leaf
 
     # Construct the full file path
-    $filePath = "$DrivePathMain\Process\Router\Router-Lib\$CurrentFolder`FolderPath.rtr"
+    $filePath = "$DrivePathMain\Process\Router\Router-Lib\Router-Paths\$CurrentFolder`FolderPath.rtr"
 
     # Ensure the folder exists before writing to the file
     $folderPath = Split-Path -Path $filePath
