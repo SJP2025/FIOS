@@ -146,3 +146,28 @@ ForEach ($InstallUiLibFile in $UiLibPs1Files) {
     }
 }
 #EndRegion
+#Region Interactive API
+# Source Module files for UI-Lib (Home of interactive API functions for the UI library)
+$UILibAPI = "${DrivePathMain}\Invoke-Lib\UI-Lib\UI-Lib.psm1"
+. $UILibAPI
+$SourceUILibPs1File = "${DrivePathMain}\Invoke-Lib\UI-Lib\UI-Lib.ps1"
+. $SourceUILibPs1File
+#Import User Interface library Modules
+#Import-Module UI-Lib
+# Source Module files for UI-Lib (Home of interactive API functions for the Router library)
+$RouterLibAPI = "${DrivePathMain}\Process\Router\Router-Lib\Router-Lib.psm1"
+. $RouterLibAPI
+$SourceRouterLibPs1File = "${DrivePathMain}\Process\Router\Router-Lib\Router-Lib.ps1"
+. $SourceRouterLibPs1File
+#import Router library Modules
+#Import-Module Router-Lib
+# Source Module files for Invoke-Lib (Home of interactive API functions for the Main Library library)
+$InvokeLibAPI = "${DrivePathMain}\Invoke-Lib\Invoke-Lib.psm1"
+C:\Users\compu\Desktop\FIOS\Invoke-Lib\Invoke-Lib.psm1
+. $InvokeLibAPI
+$SourceInvokeLibPs1File = "${DrivePathMain}\Invoke-Lib\Invoke-Lib.ps1"
+. $SourceInvokeLibPs1File
+#import Main library Modules
+#Import-Module Invoke-Lib
+#Initiate Folder path variable names (Ref: Router API)
+Export-ArrayNames -InitBinaryData $InitBinaryData

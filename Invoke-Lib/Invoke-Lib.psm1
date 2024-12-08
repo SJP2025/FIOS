@@ -1,1 +1,2 @@
-#Region Set PSModules Scope
+#Region Define Lib's API Functions
+#EndRegion

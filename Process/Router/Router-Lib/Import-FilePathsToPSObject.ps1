@@ -24,8 +24,6 @@ Function Import-FilePathsToPSObject {
             $originalName = $file.BaseName
             [Int]$FileNameCharsArray = $originalName.Length
             $fileNameWithoutExtension = $originalName.Substring(0, $FileNameCharsArray - 10) -replace "-", ""
-            #Write-Host "Original Name: $originalName"
-            #Write-Host "Transformed Name: $fileNameWithoutExtension"
 
             $fileContent = Get-Content -Path $file.FullName -Raw
 
