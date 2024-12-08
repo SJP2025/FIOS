@@ -36,12 +36,6 @@ Function Import-FilePathsToPSObject {
             $fileContentsArray += $customObject
         }
 
-        # foreach ($item in $fileContentsArray) {
-        #     $item.PSObject.Properties | ForEach-Object {
-        #         Write-Host "Property Name: $($_.Name)"
-        #     }
-        #}
-
         return $fileContentsArray
     } else {
         Write-Warning "The specified folder does not exist: $folderPath"
