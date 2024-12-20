@@ -1,2 +1,2 @@
-#Region Define Lib's API Functions
+#Region Main Script modules
 #EndRegion
