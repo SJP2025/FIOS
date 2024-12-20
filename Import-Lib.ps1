@@ -163,7 +163,6 @@ $SourceRouterLibPs1File = "${DrivePathMain}\Process\Router\Router-Lib\Router-Lib
 #Import-Module Router-Lib
 # Source Module files for Invoke-Lib (Home of interactive API functions for the Main Library library)
 $InvokeLibAPI = "${DrivePathMain}\Invoke-Lib\Invoke-Lib.psm1"
-C:\Users\compu\Desktop\FIOS\Invoke-Lib\Invoke-Lib.psm1
 . $InvokeLibAPI
 $SourceInvokeLibPs1File = "${DrivePathMain}\Invoke-Lib\Invoke-Lib.ps1"
 . $SourceInvokeLibPs1File
