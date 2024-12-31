@@ -1,7 +1,7 @@
 #Region Define Router's API Functions
 #Source Router-Lib.ps1 
-$TestOutPutFromRouterLib = Write-Output "Hello from the Router-Lib.ps1/API"
-$TestOutPutFromRouterLibAPI = Write-Output "Helho again from the Router-Lib.ps1/API"
+$TestOutPutFromRouterLib = Write-Output "Hello from the Router Library API"
+$TestOutPutFromRouterLibAPI = Write-Output "Hello again from the Router Library API"
 #Define UI-Lib (Router's API) Function
 Function Get-PathNames {
 $GetFIOSFolderPaths = Import-FilePathsToPSObject

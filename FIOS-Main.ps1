@@ -11,3 +11,6 @@ $ExecutePathArray = Initiate-Process
 Assert-InitialProcess -FilePathArray $ExecutePathArray
 
 #EndRegion
+Write-Host "The drop and run pattern/framework has been loaded and is running in memory right now"
+Write-Host "Lets test the framework by running the interactive API"
+Write-Host "Type 'Use-InteractiveAPI' into the powershell command line"
