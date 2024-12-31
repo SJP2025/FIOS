@@ -149,21 +149,21 @@ ForEach ($InstallUiLibFile in $UiLibPs1Files) {
 #Region Interactive API
 # Source Module files for UI-Lib (Home of interactive API functions for the UI library)
 $UILibAPI = "${DrivePathMain}\Invoke-Lib\UI-Lib\UI-Lib.psm1"
-. $UILibAPI
+Import-Module $UILibAPI
 $SourceUILibPs1File = "${DrivePathMain}\Invoke-Lib\UI-Lib\UI-Lib.ps1"
 . $SourceUILibPs1File
 #Import User Interface library Modules
 #Import-Module UI-Lib
 # Source Module files for UI-Lib (Home of interactive API functions for the Router library)
 $RouterLibAPI = "${DrivePathMain}\Process\Router\Router-Lib\Router-Lib.psm1"
-. $RouterLibAPI
+Import-Module $RouterLibAPI
 $SourceRouterLibPs1File = "${DrivePathMain}\Process\Router\Router-Lib\Router-Lib.ps1"
 . $SourceRouterLibPs1File
 #import Router library Modules
 #Import-Module Router-Lib
 # Source Module files for Invoke-Lib (Home of interactive API functions for the Main Library library)
 $InvokeLibAPI = "${DrivePathMain}\Invoke-Lib\Invoke-Lib.psm1"
-. $InvokeLibAPI
+Import-Module $InvokeLibAPI
 $SourceInvokeLibPs1File = "${DrivePathMain}\Invoke-Lib\Invoke-Lib.ps1"
 . $SourceInvokeLibPs1File
 #import Main library Modules
