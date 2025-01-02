@@ -170,3 +170,8 @@ $SourceInvokeLibPs1File = "${DrivePathMain}\Invoke-Lib\Invoke-Lib.ps1"
 #Import-Module Invoke-Lib
 #Initiate Folder path variable names (Ref: Router API)
 Export-ArrayNames -InitBinaryData $InitBinaryData
+#Region Refresh Router
+#--Delete and regenerate router (.rtr) files
+Reset-Router
+$ExecutePathArray = Initiate-Process
+Assert-InitialProcess -FilePathArray $ExecutePathArray
