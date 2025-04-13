@@ -25,10 +25,20 @@
 #-- credentials that will be stored/managed by a user specific RDBMS account. functioning something
 #-- not unlike a Password manager. (Thats the plan at the design stage anyway, Lets see how things
 #-- unfold in translation from design/concept to prototype) 
+
 $DrivePathMain = $PSScriptRoot
 Write-Output "Sourcing Drive Path: ${DrivePathMain}"
 #EndRegion
-
+# #-- Dot-source PS modules folders 
+# $DotSourceModuleLib = "${DrivePathMain}\Invoke-Lib\Invoke-Lib.psm1"
+# . $DotSourceModuleLib
+# #---------------------
+# $DotSourceUiLib = "${DrivePathMain}\Invoke-Lib\UI-Lib\UI-Lib.psm1"
+# . $DotSourceUiLib
+# #---------------------
+# $DotSourceRouterLib = "${DrivePathMain}\Process\Router\Router-Lib\Router-Lib.psm1"
+# . $DotSourceRouterLib
+# #--
 #Region Add \Lib\ PSModulesPath
 $InvokeLibFolder = "${DrivePathMain}\Invoke-Lib"
 $LibPath = "${DrivePathMain}\Invoke-Lib"
@@ -146,6 +156,8 @@ ForEach ($InstallUiLibFile in $UiLibPs1Files) {
     }
 }
 #EndRegion
+#-- Reset $DrivePathMain variable
+$DrivePathMain = Invoke-RootPath
 #Region Interactive API
 # Source Module files for UI-Lib (Home of interactive API functions for the UI library)
 $UILibAPI = "${DrivePathMain}\Invoke-Lib\UI-Lib\UI-Lib.psm1"
@@ -170,8 +182,11 @@ $SourceInvokeLibPs1File = "${DrivePathMain}\Invoke-Lib\Invoke-Lib.ps1"
 #Import-Module Invoke-Lib
 #Initiate Folder path variable names (Ref: Router API)
 Export-ArrayNames -InitBinaryData $InitBinaryData
+#-- Reset $DrivePathMain variable
+$DrivePathMain = Invoke-RootPath
 #Region Refresh Router
 #--Delete and regenerate router (.rtr) files
 Reset-Router
 $ExecutePathArray = Initiate-Process
 Assert-InitialProcess -FilePathArray $ExecutePathArray
+#--

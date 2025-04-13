@@ -5,8 +5,9 @@ Write-Output "Sourcing Drive Path: ${DrivePathMain}"
 #--Import/Load Modular framework  into scipt Scope. 
 $ImportScriptLibrary = "${DrivePathMain}\Import-Lib.ps1"
 . $ImportScriptLibrary
-
 #EndRegion
+#-- Reset $DrivePathMain variable
+$DrivePathMain = Invoke-RootPath
 #Region Intro/Test API
 #Load TUI style Splash Screen
 Invoke-SplashScreen

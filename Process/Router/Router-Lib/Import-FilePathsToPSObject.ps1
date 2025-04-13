@@ -1,11 +1,8 @@
-$GetPAthToApplicationRoot = Get-FIOSROOT
-$DrivePathMain = $GetPAthToApplicationRoot.path
+$GetPAthToApplicationRoot = Invoke-RootPath
+$DrivePathMain = $GetPAthToApplicationRoot
 
 #Region Call Router Paths
 Function Import-FilePathsToPSObject {
-    param (
-        [string]$DrivePathMain = "C:\Users\compu\Desktop\FIOS"  # Default value
-    )
 
     if (-not $DrivePathMain) {
         Write-Error "The 'DrivePathMain' variable is not set. Please specify a valid base path."
