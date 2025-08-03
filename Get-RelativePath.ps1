@@ -2,10 +2,9 @@
 function Get-RelativePath {
     # Ensure the function gets the script's directory
     param (
-        [string]$path
+        [string]$path = $PSScriptRoot
     )
-    # Define Relatve PAth 
-    $path = Invoke-RelativePath
+
     # Get the current folder name
     $CurrentFolder = Split-Path -Path $path -Leaf
 
