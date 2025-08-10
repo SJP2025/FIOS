@@ -25,7 +25,7 @@ Function Import-FilePathsToPSObject {
             $fileContent = Get-Content -Path $file.FullName -Raw
 
             $customObject = [PSCustomObject]@{
-                $($fileNameWithoutExtension) = $fileContent
+                $($fileNameWithoutExtension) = $fileContent.Trim()
             }
 
             $fileContentsArray += $customObject
