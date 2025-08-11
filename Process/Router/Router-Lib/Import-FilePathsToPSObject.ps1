@@ -19,15 +19,17 @@ Function Import-FilePathsToPSObject {
 
         foreach ($file in $files) {
             $originalName = $file.BaseName
-            [Int]$FileNameCharsArray = $originalName.Length
-            $fileNameWithoutExtension = $originalName.Substring(0, $FileNameCharsArray - 10) -replace "-", ""
-
-            $fileContent = Get-Content -Path $file.FullName -Raw
-
-            $customObject = [PSCustomObject]@{
-                $($fileNameWithoutExtension) = $fileContent.Trim()
+            $fileNameWithoutExtension = $originalName.Substring(0, $originalName.Length - 10) -replace "-", ""
+        
+            # Read, cast, and trim the content
+            $fileContent = [string](Get-Content -Path $file.FullName -Raw).Trim()
+        
+            # Create object safely
+            $customObject = New-Object PSObject
+            if (-not [string]::IsNullOrWhiteSpace($fileNameWithoutExtension)) {
+                Add-Member -InputObject $customObject -MemberType NoteProperty -Name $fileNameWithoutExtension -Value $fileContent
             }
-
+        
             $fileContentsArray += $customObject
         }
 
